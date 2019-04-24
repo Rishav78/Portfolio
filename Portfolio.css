@@ -1,146 +1,106 @@
 body{
-	margin: 0px;
 	padding: 0px;
-}
-.container{
-	width: 100%;
-	max-width: 1536px;
-	margin: auto;
+	margin: 0;
 }
 .Intro{
-	display: grid;
-	grid-template-columns: 1fr 2fr;
-	height: 500px;
-	position: relative;
+	display: flex;
+	height: 100vh;
+	overflow: hidden;
 }
-.Intro1{
+.Ileft{
+	flex: 1;
+	
 	background-color: blue;
-	padding: 20px 0px 0px 30px;
-	box-sizing: border-box;
 }
-.Intro2{
-	background-image: url("bluewhitepolkadot-05-091815-223_SB_PM.jpg");
-	padding: 20px 100px 0px 0px;
-	background-color: rgb(255, 255, 230);
-	box-sizing: border-box;
-}
-.center{
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	width: 45%;
-	background-color: white;
-	position: absolute;
-	transform: translateY(-50%);
-	top: 50%;
-	animation: profilepic 1s both;
-	z-index: 10;
-	box-sizing: border-box;
-	box-shadow: 1px 1px 1px rgb(255, 255, 230);
-}
-.thought{
-	position: absolute;
-	padding: 15px 30px 15px 30px;
-	background-color: white;
-	transform: translate(-25%, 50%);
-	left: 0px;
-	bottom: 0px;
-}
-.image{
+.Iright{
+	flex: 2;
 	position: relative;
-	/*overflow: hidden;*/
+	background-color: green;
+}
+.Center{
+	display: flex;
+	width: 70%;
+	height: 70%;
+	align-items: center; 
+	position: absolute;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	top: 15%;
+	transform: translateX(-30%);
+	left: 0;
+}
+.profile{
+	width: 55%;
+	height: 100%;
 }
 .content{
-	overflow: hidden;
-	padding: 25px;
-}
-.logo{
-	width: 50px;
-	height: 50px;
-	margin: 20px;
-	background-color: blue;
-	display: inline-block;
-	transform: rotate(45deg);
-}
-.logoText{
-	display: inline-block;
-	margin: 15px 0px 0px 2px;
-	transform: rotate(-45deg);
-}
-.Intro2logo{
-	float: right;
-}
-.projectContainer{
-	display: grid;
-	grid-template-columns: 1fr 1fr; 
-	margin-top: 50px;
-}
-.Pleft{
-	display: grid;
-	padding: 25px 30px 25px 0px;
-	grid-template-rows: repeat(5,1fr);
-	box-sizing: border-box;
-}
-
-.Pright{
-	display: grid;
-	padding-left: 40px;
-	grid-template-rows: 1fr 2fr 2fr 2fr;
-	box-sizing: border-box;
-}
-
-.card{
-	position: relative;
-	display: inline-block;
-	margin-bottom: 60px;
-}
-
-.Pleft .projects .card{
-	animation: swipeleft 1s both;
-	/*float: right;*/
-}
-
-.Pright .projects .card{
-	/*margin-left: 5%;*/
-	animation: swiperight 1s both;
-	float: right;
-}
-
-.image{
-	width: 400px;
-	height: 250px;
-	background-color: yellow;
-	border: 1px solid black;
-	z-index: 2;
+	width: 40%;
+	min-width: 200px;
 }
 img{
 	width: 100%;
-	height: 90%;
+	height: 100%;
 }
-.projectNumber{
-	position: absolute;
+.projects{
+	display: block;
 	background-color: blue;
+	border: none;
+	margin-top: 20px;
+	padding: 5% 10% 5% 10%;
+}
+.work{
+	display: flex;
+	width: 70%;
+	margin: auto;
+	flex-wrap: wrap;
+}
+.Wleft{
+	flex: 1;
+	padding: 20px;
+	box-sizing: border-box;
+	/*background-color: pink;*/
+	z-index: -2;
+}
+.Wright{
+	flex: 1;
+	padding: 20px;
+	box-sizing: border-box;
+	/*background-color: teal;*/
+	z-index: -2;
+}
+.project{
+	width: 350px;
+	height: 400px;
+	margin: 10%;
+	position: relative;
+	/*background-color: black;*/
+}
+.basicDetails{
 	width: 100%;
 	height: 100%;
-	z-index: 1;
-	bottom: -30px;
-	left: -30px;
+	/*z-index: -2;*/
+}
+.image{
+	height: 70%;
 }
 .discription{
-	height: 9%;
-	background-color: yellow;
+	height: 30%;
+	background-color: gray;
 }
-.text{
+.about{
+	margin: 5%;
+}
+.projectDetails{
 	position: absolute;
-	bottom: 0;
-}
-.underline{
-	width: 25%;
-	height: 3px;
-	margin-left: 10px;
-	display: inline-block;
 	background-color: blue;
+	z-index: -1;
+	left: -7%;
+	bottom: -7%;
+	width: 100%;
+	height: 100%;
 }
 .contactContainer{
+	margin-top: 6%;
 	display: grid;
 	grid-template-columns: 1fr 5fr;
 	background-color: rgb(230, 230, 230);
@@ -157,7 +117,7 @@ img{
 .feedback{
 	transform: translateY(-30%);
 	top: -10px;
-	animation: feedBack 1s both;
+	right: 0;
 	width: 300px;
 	background-color: blue;
 	padding: 20px;
@@ -178,48 +138,4 @@ img{
 	background-color: white;
 	border: none;
 	padding: 10px 30px 10px 30px;
-}
-
-@keyframes swipeleft{
-	from{
-		opacity: 0;
-		margin-left: 0px;
-	}
-	to{
-		opacity: 1;
-		margin-left: 30%;
-	}
-}
-
-@keyframes swiperight{
-	from{
-		opacity: 0;
-		margin-right: 0px;
-	}
-	to{
-		opacity: 1;
-		margin-right: 40%;
-	}
-}
-
-@keyframes profilepic{
-	from{
-		opacity: 0;
-		left: 0px;
-	}
-	to{
-		opacity: 1;
-		left: 15%;
-	}
-}
-
-@keyframes feedBack{
-	from{
-		opacity: 0;
-		right: -100px;
-	}
-	to{
-		opacity: 1;
-		right: 0px;
-	}
 }
